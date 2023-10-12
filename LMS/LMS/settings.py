@@ -130,5 +130,5 @@ EMAIL_HOST_USER = 'suyashsharma171001@gmail.com'
 EMAIL_HOST_PASSWORD = 'hjut uvyn cfsv mmod'
 
 
-KEY_ID = "rzp_test_Bscm2H7X7woEn5"
-KEY_SECRET = "jEbX3IWU8oYr0iOskxUaW2sX"
+KEY_ID = ""
+KEY_SECRET = ""
