@@ -130,5 +130,5 @@ EMAIL_HOST_USER = 'suyashsharma171001@gmail.com'
 EMAIL_HOST_PASSWORD = 'hjut uvyn cfsv mmod'
 
 
-KEY_ID = ""
-KEY_SECRET = ""
+KEY_ID = "razor pay key id"
+KEY_SECRET = "razor pay key secret"
