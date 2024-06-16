@@ -137,9 +137,78 @@ def PAGE_NOT_FOUND(request):
     return render(request, 'error/404.html', context)
 
 
+# def CHECKOUT(request,slug):
+#     course = Course.objects.get(slug=slug)
+#     action = request.GET.get('action')
+#     if course.price == 0:
+#         usercourse = UserCourse(
+#             user=request.user,
+#             course=course,
+#         )
+#
+#         usercourse.save()
+#         messages.success(request,'Course Are Successfully Enrolled ! ')
+#         return redirect('my_course')
+#     elif action == 'create_payment':
+#         if request.method == "post":
+#             first_name = request.POST.get('first_name')
+#             last_name = request.POST.get('last_name')
+#             country = request.POST.get('country')
+#             address_1 = request.POST.get('address_1')
+#             address_2 = request.POST.get('address_2')
+#             city = request.POST.get('city')
+#             state = request.POST.get('state')
+#             postcode = request.POST.get('postcode')
+#             phone = request.POST.get('phone')
+#             email = request.POST.get('email')
+#             order_comments = request.POST.get('order_comments')
+#
+#             amount = course.price
+#             currency = "INR"
+#             notes={
+#                 "name": f'{first_name} {last_name}',
+#                 "country":country,
+#                 "address": f'{address_1} {address_2}',
+#                 "city":city,
+#                 "state":state,
+#                 "postcode":postcode,
+#                 "phone":phone,
+#                 "email":email,
+#                 "order_comments":order_comments,
+#             }
+#             receipt = f"Skola-{int(time())}"
+#             order = client.order.create(
+#                 {
+#                     'receipt':receipt,
+#                     'notes':notes,
+#                     'amount':amount,
+#                     'currency':currency,
+#                 }
+#             )
+#             payment = Payment(
+#                 course=course,
+#                 user=request.user,
+#                 order_id=order.get('id')
+#             )
+#             payment.save()
+#
+#
+#     context = {
+#
+#         'course': course,
+#         'order':order,
+#
+#     }
+#
+#     return render(request, 'checkout/checkout.html',context)
+
 def CHECKOUT(request, slug):
     course = Course.objects.get(slug=slug)
     action = request.GET.get('action')
+
+    # Initialize the variable `order` outside of the `create_payment()` function.
+    order = None
+
     if course.price == 0:
         usercourse = UserCourse(
             user=request.user,
@@ -147,60 +216,31 @@ def CHECKOUT(request, slug):
         )
 
         usercourse.save()
-        messages.success(request,'Course Are Successfully Enrolled ! ')
+        messages.success(request, 'Course Are Successfully Enrolled ! ')
         return redirect('my_course')
     elif action == 'create_payment':
         if request.method == "post":
-            first_name = request.POST.get('first_name')
-            last_name = request.POST.get('last_name')
-            country = request.POST.get('country')
-            address_1 = request.POST.get('address_1')
-            address_2 = request.POST.get('address_2')
-            city = request.POST.get('city')
-            state = request.POST.get('state')
-            postcode = request.POST.get('postcode')
-            phone = request.POST.get('phone')
-            email = request.POST.get('email')
-            order_comments = request.POST.get('order_comments')
+            # Create the order object and save it to the database.
+            order = client.order.create({
+                'receipt': receipt,
+                'notes': notes,
+                'amount': amount,
+                'currency': currency,
+            })
 
-            amount = course.price
-            currency = "INR"
-            notes={
-                "name": f'{first_name} {last_name}',
-                "country":country,
-                "address": f'{address_1} {address_2}',
-                "city":city,
-                "state":state,
-                "postcode":postcode,
-                "phone":phone,
-                "email":email,
-                "order_comments":order_comments,
-            }
-            receipt = f"Skola-{int(time())}"
-            order = client.order.create(
-                {
-                    'receipt':receipt,
-                    'notes':notes,
-                    'amount':amount,
-                    'currency':currency,
-                }
-            )
             payment = Payment(
                 course=course,
                 user=request.user,
-                order_id=order.get('id')
+                order_id=order.get('id'),
             )
             payment.save()
 
-
     context = {
-
         'course': course,
-        'order':order,
-
+        'order': order,
     }
 
-    return render(request, 'checkout/checkout.html',context)
+    return render(request, 'checkout/checkout.html', context)
 
 
 def MY_COURSE(request):
