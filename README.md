@@ -80,17 +80,15 @@ python manage.py runserver
 ```bash
 Open your browser and navigate to http://127.0.0.1:8000/
 ```
-8. **🎯 Future Enhancements**
+**🎯 Future Enhancements**
 AI-powered course recommendations to personalize learning.
 Discussion forums for student and instructor interactions.
 Gamification features like badges and leaderboards.
 Payment gateway integration for premium courses.
-9. **🤝 Contributing**
+**🤝 Contributing**
 Contributions are welcome! Please fork the repository, create a new branch for your feature or bugfix, and submit a pull request. Ensure your code adheres to the project's coding standards and includes relevant tests.
-
-10. **📜 License**
+**📜 License**
 This project is licensed under the MIT License. See the LICENSE file for details.
-
-11. **📧 Contact**
+**📧 Contact**
 For inquiries, please contact me @suyashsharma171001@gmail.com.
 
