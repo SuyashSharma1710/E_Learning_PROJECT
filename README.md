@@ -50,27 +50,27 @@ An interactive and responsive Learning Management System (LMS) built using Djang
 
 ## 📂 Installation & Setup
 
-## 1. Clone the repository
+### 1. Clone the repository
 git clone https://github.com/SuyashSharma1710/E_Learning_PROJECT.git
 cd E_Learning_PROJECT
 
-## 2. Create and activate a virtual environment
+### 2. Create and activate a virtual environment
 python -m venv venv
 source venv/bin/activate  # On Windows use `venv\Scripts\activate`
 
-## 3. Install dependencies
+### 3. Install dependencies
 pip install -r requirements.txt
 
-## 4. Apply database migrations
+### 4. Apply database migrations
 python manage.py migrate
 
-## 5. Create a superuser
+### 5. Create a superuser
 python manage.py createsuperuser
 
-## 6. Start the development server
+### 6. Start the development server
 python manage.py runserver
 
-## 7. Access the application
+### 7. Access the application
 echo "Open your browser and navigate to http://127.0.0.1:8000/"
 
 ## 🎯 Future Enhancements
