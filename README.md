@@ -50,55 +50,42 @@ An interactive and responsive Learning Management System (LMS) built using Djang
 
 ## 📂 Installation & Setup
 
-1. **Clone the repository:**
-   ```Bash
-   git clone https://github.com/SuyashSharma1710/E_Learning_PROJECT.git
-   cd E_Learning_PROJECT
-   ```
-   
-2. **Create and activate a virtual environment:**
-```bash
+# 1. Clone the repository
+git clone https://github.com/SuyashSharma1710/E_Learning_PROJECT.git
+cd E_Learning_PROJECT
+
+# 2. Create and activate a virtual environment
 python -m venv venv
 source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-```
 
-3. **Install dependencies:**
-```bash
+# 3. Install dependencies
 pip install -r requirements.txt
-```
 
-4. **Apply database migrations:**
-```bash
+# 4. Apply database migrations
 python manage.py migrate
-```
 
-5. **Create a superuser:**
-```bash
+# 5. Create a superuser
 python manage.py createsuperuser
-```
 
-6. **Start the development server:**
-```bash
+# 6. Start the development server
 python manage.py runserver
-```
 
-7. **Access the application:**
-```bash
-Open your browser and navigate to http://127.0.0.1:8000/
-```
+# 7. Access the application
+echo "Open your browser and navigate to http://127.0.0.1:8000/"
 
-**🎯 Future Enhancements**
-AI-powered course recommendations to personalize learning.
-Discussion forums for student and instructor interactions.
-Gamification features like badges and leaderboards.
-Payment gateway integration for premium courses.
+# 🎯 Future Enhancements
+echo "Future Enhancements:"
+echo "- AI-powered course recommendations to personalize learning."
+echo "- Discussion forums for student and instructor interactions."
+echo "- Gamification features like badges and leaderboards."
+echo "- Payment gateway integration for premium courses."
 
-**🤝 Contributing**
-Contributions are welcome! Please fork the repository, create a new branch for your feature or bugfix, and submit a pull request. Ensure your code adheres to the project's coding standards and includes relevant tests.
+# 🤝 Contributing
+echo "Contributions are welcome! Please fork the repository, create a new branch for your feature or bugfix, and submit a pull request."
+echo "Ensure your code adheres to the project's coding standards and includes relevant tests."
 
-**📜 License**
-This project is licensed under the MIT License. See the LICENSE file for details.
+# 📜 License
+echo "This project is licensed under the MIT License. See the LICENSE file for details."
 
-**📧 Contact**
-For inquiries, please contact me @suyashsharma171001@gmail.com.
-
+# 📧 Contact
+echo "For inquiries, please contact me at suyashsharma171001@gmail.com."
