@@ -84,8 +84,5 @@ echo "- Payment gateway integration for premium courses."
 echo "Contributions are welcome! Please fork the repository, create a new branch for your feature or bugfix, and submit a pull request."
 echo "Ensure your code adheres to the project's coding standards and includes relevant tests."
 
-## 📜 License
-echo "This project is licensed under the MIT License. See the LICENSE file for details."
-
 ## 📧 Contact
 echo "For inquiries, please contact me at suyashsharma171001@gmail.com."
